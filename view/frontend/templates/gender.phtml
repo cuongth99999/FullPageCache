@@ -1,0 +1,21 @@
+<?php
+/** @var \Magenest\FullPageCache\Block\Gender $block */
+$gender = $block->getCustomerGender();
+?>
+<div data-bind="scope: 'gender'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "gender": {
+                        "component": "Magenest_FullPageCache/js/gender",
+                        "genderId": "<?= $block->getCustomerGender() ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
