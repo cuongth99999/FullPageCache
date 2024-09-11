@@ -1,0 +1,14 @@
+<?php
+/** @var \Magenest\FullPageCache\Block\Product\AdditionalInformation $block */
+$product = $block->getProduct();
+$qty = $block->getCurrentQty();
+?>
+<div class="product-qty-current">
+    <p class="product-source-qty">
+        <?php if ($qty && (int) $qty > 0): ?>
+            <span class="current-qty-stock"><?= __("%1 in stock", (int) $qty) ?></span>
+        <?php else: ?>
+            <span class="current-qty-stock"><?= __("Out stock") ?></span>
+        <?php endif; ?>
+    </p>
+</div>
